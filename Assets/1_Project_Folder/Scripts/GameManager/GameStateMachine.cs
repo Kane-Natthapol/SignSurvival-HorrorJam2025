@@ -4,10 +4,10 @@ public class GameStateMachine : StateManager<GameStateMachine.EState>
 {
     public enum EState
     {
+        Mainmenu,
         Setup,
-        GamePlay,
-        GameUpgrade,
-        GamePause,
+        DrawTime,
+        ShowResult,
         GameEnd
     }
 
@@ -48,10 +48,10 @@ public class GameStateMachine : StateManager<GameStateMachine.EState>
 
     private void InitializeStates()
     {
+        States.Add(EState.Mainmenu, new GameMainmenuState(context, EState.Setup));
         States.Add(EState.Setup, new GameSetupState(context, EState.Setup));
-        States.Add(EState.GamePlay, new GameplayState(context, EState.GamePlay));
-        States.Add(EState.GameUpgrade, new GameUpgradeState(context, EState.GameUpgrade));
-        States.Add(EState.GamePause, new GamePauseState(context, EState.GamePause));
+        States.Add(EState.DrawTime, new GameDrawTimeState(context, EState.DrawTime));
+        States.Add(EState.ShowResult, new GameShowResultState(context, EState.ShowResult));
         States.Add(EState.GameEnd, new GameEndState(context, EState.GameEnd));
         
         CurrentState = States[EState.Setup];

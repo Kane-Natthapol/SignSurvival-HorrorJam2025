@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class GameSetupState : GameState
+public class GameDrawTimeState : GameState
 {
-    public GameSetupState(GameStateContext context, GameStateMachine.EState stateKey) : base(context, stateKey)
+    public GameDrawTimeState(GameStateContext context, GameStateMachine.EState stateKey) : base(context, stateKey)
     {
         Context = context;
     }
