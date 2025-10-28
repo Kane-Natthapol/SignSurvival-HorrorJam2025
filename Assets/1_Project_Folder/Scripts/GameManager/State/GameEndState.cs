@@ -12,6 +12,15 @@ public class GameEndState : GameState
     {
         Time.timeScale = 0;
         UIManager.Instance.SetActiveGameEndPanel(true);
+
+        if(Context.resultEndGame == ResultEndGame.Winner)
+        {
+            UIManager.Instance.SetTextResultEndGame("WINNER");
+        }
+        else if(Context.resultEndGame == ResultEndGame.Loser)
+        {
+            UIManager.Instance.SetTextResultEndGame("LOSER");
+        }
     }
 
     public override void UpdateState()
@@ -28,9 +37,7 @@ public class GameEndState : GameState
     {
         if (Context.isRestartGame)
         {
-            Time.timeScale = 1;
-            string currentScene = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(currentScene);
+            Context.stateMachine.RestartGame();
         }
 
         return StateKey;

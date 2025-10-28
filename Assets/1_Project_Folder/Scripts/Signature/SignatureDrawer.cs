@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 
 [RequireComponent(typeof(LineRenderer))]
-public class SignatureDrawer : MonoBehaviour
+public class SignatureDrawer : Singleton<SignatureDrawer>
 {
     [Header("Drawing Settings")]
     public float minDistance = 0.01f;
@@ -68,4 +68,10 @@ public class SignatureDrawer : MonoBehaviour
     }
 
     public List<Vector3> GetDrawnPoints() => points;
+
+    public void ResetDraw()
+    {
+        points.Clear();
+        line.positionCount = 0;
+    }
 }

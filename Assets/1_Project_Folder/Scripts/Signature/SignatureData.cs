@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-[CreateAssetMenu(menuName = "Signature/Signature Data")]
+[CreateAssetMenu(menuName = "Signature/SignatureData")]
 public class SignatureData : ScriptableObject
 {
     public string signatureName;

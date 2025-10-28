@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameStateMachine : StateManager<GameStateMachine.EState>
 {
@@ -30,30 +31,37 @@ public class GameStateMachine : StateManager<GameStateMachine.EState>
     }
 
     // MAIN MENU
-    public bool StartGame() => context.isStartGame = true;
+    public void StartGame() => context.isStartGame = true;
 
     //GAME PLAY
-    public bool PauseGame() => context.isPauseGame = true;
-    public bool WaveEndGame() => context.isWaveEnd = true;
-    public bool EndGame() => context.isGameEnd = true;
+    public void StartDraw() => context.isStartDraw = true;
+    public void StartResult(bool isBool)
+    {
+        context.isPass = isBool;
+        context.isStartResult = true;
+    }
 
-    //GAME PAUSE
-    public bool ContinueGame() => context.isContinueGame = true;
+    public void StartSetup() => context.isStartSetup = true;
+    public void StartEndGame() => context.isStartEndGame = true;
 
-    //GAME UPGRADE
-    public bool SelectedUpgrade() => context.isSelectedUppgrade = true;
+    //GAME END
+    public void StartReStartGame() => context.isRestartGame = true;
 
-    //Game End
-    public bool RestartGame() => context.isRestartGame = true;
+    public void RestartGame()
+    {
+        Time.timeScale = 1;
+        string currentScene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentScene);
+    }
 
     private void InitializeStates()
     {
-        States.Add(EState.Mainmenu, new GameMainmenuState(context, EState.Setup));
+        States.Add(EState.Mainmenu, new GameMainmenuState(context, EState.Mainmenu));
         States.Add(EState.Setup, new GameSetupState(context, EState.Setup));
         States.Add(EState.DrawTime, new GameDrawTimeState(context, EState.DrawTime));
         States.Add(EState.ShowResult, new GameShowResultState(context, EState.ShowResult));
         States.Add(EState.GameEnd, new GameEndState(context, EState.GameEnd));
         
-        CurrentState = States[EState.Setup];
+        CurrentState = States[EState.Mainmenu];
     }
 }

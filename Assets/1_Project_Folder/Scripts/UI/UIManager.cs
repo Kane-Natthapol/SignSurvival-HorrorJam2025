@@ -10,10 +10,10 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] Button startGameButton;
     [SerializeField] Button quitGameButton;
 
-
     [HorizontalLine("GAME END", 1, FixedColor.CloudWhite)]
     [SerializeField] GameObject gameEndPanel;
     [SerializeField] Button restartButton;
+    [SerializeField] TextMeshProUGUI resultEndGameText;
 
     [HorizontalLine("GAME PAUSE", 1, FixedColor.CloudWhite)]
     [SerializeField] GameObject gamePausePanel;
@@ -25,6 +25,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] TextMeshProUGUI timeCoolDownText;
     [SerializeField] TextMeshProUGUI healthText;
     [SerializeField] TextMeshProUGUI pageCountText;
+    [SerializeField] TextMeshProUGUI resultText;
 
     //[HorizontalLine("SETTING", 1, FixedColor.CloudWhite)]
 
@@ -41,30 +42,30 @@ public class UIManager : Singleton<UIManager>
 
         //GAME END
         restartButton.onClick.AddListener(ClickReStartGame);
-
-        //GAME PAUSE
-        gameContinueButton.onClick.AddListener(ClickContinue);
     }
 
     #region MAIN MENU PANEL
     public void SetActiveMainMenuPanel(bool isBool) => mainMenuPanel.SetActive(isBool);
 
     void ClickStartGame() => GameStateMachine.Instance.StartGame();
+    void ClickQuitGame() => Application.Quit();
     #endregion
 
     #region GAME END PANEL
     public void SetActiveGameEndPanel(bool isBool) => gameEndPanel.SetActive(isBool);
 
-    void ClickReStartGame() => GameStateMachine.Instance.RestartGame();
+    void ClickReStartGame() => GameStateMachine.Instance.StartReStartGame();
+    public void SetTextResultEndGame(string text) => resultEndGameText.text = $"{text}";
     #endregion
 
-    #region GAME PAUSE PANEL
-    public void SetActiveGamePausePanel(bool isBool) => gamePausePanel.SetActive(isBool);
+    #region GAME PLAY
+    public void SetActiveGamePlayPanel(bool isBool) => gamePlayPanel.SetActive(isBool);
 
-    void ClickContinue() => NothingMethoid();
+    public void SetTextTimeCoolDown(string time) => timeCoolDownText.text = $"Time : {time}";
+    public void SetTextHealth(string hp) => healthText.text = $"HP : {hp}";
+    public void SetTextPageCount(string currentPage,string allPage) => pageCountText.text = $"Page : {currentPage}/{allPage}";
+    public void SetTextResult(string text) => resultText.text = $"{text}";
     #endregion
-
-    void ClickQuitGame()  =>  Application.Quit();
 
     void NothingMethoid() { }
 }

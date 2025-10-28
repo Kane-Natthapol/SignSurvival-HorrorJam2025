@@ -9,7 +9,7 @@ public class GameMainmenuState : GameState
 
     public override void EnterState()
     {
-
+        UIManager.Instance.SetActiveMainMenuPanel(true);
     }
 
     public override void UpdateState()
@@ -19,11 +19,20 @@ public class GameMainmenuState : GameState
 
     public override void ExitState()
     {
+        UIManager.Instance.SetActiveMainMenuPanel(false);
+        GameManager.Instance.SetUpGame();
+        Context.isPass = true;
 
+        Context.isStartGame = false;
     }
 
     public override GameStateMachine.EState GetNextState()
     {
+        if(Context.isStartGame)
+        {
+            return GameStateMachine.EState.Setup;
+        }
+
         return StateKey;
     }
 

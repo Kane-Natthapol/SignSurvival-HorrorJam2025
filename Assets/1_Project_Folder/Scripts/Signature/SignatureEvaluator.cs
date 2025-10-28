@@ -1,11 +1,10 @@
-using UnityEngine;
+using CustomInspector;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class SignatureEvaluator : MonoBehaviour
+public class SignatureEvaluator : Singleton<SignatureEvaluator>
 {
-    public static SignatureEvaluator Instance;
-
-    [Header("Evaluation Settings")]
+    [HorizontalLine("SIGNATURE EVALUATOR DATA", 1, FixedColor.CloudWhite)]
     [Range(0f, 1f)] public float threshold = 0.8f;
 
     [Header("Reference Line Settings")]
@@ -14,18 +13,10 @@ public class SignatureEvaluator : MonoBehaviour
 
     private SignatureData currentData;
 
-    void Awake()
+    public void SetUpEvaluator(float eva)
     {
-        Instance = this;
+        threshold = eva;
     }
-
-    /*private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.B))
-        {
-            SetSignature(currentData);
-        }
-    }*/
 
     public void SetSignature(SignatureData data)
     {
@@ -45,10 +36,24 @@ public class SignatureEvaluator : MonoBehaviour
         float similarity = ComparePaths(drawnPoints, localRef);
         Debug.Log($"Similarity: {similarity:F2}");
 
+        string resultText = string.Empty;
+        bool isPass = false;
+
         if (similarity >= threshold)
+        {
             Debug.Log("<color=green>PASS</color>");
+            resultText = "<color=green>PASS</color>";
+            isPass = true;
+        }
         else
+        {
             Debug.Log("<color=red>FAIL</color>");
+            resultText = "<color=red>FAIL</color>";
+            isPass = false;
+        }
+
+        UIManager.Instance.SetTextResult(resultText);
+        GameStateMachine.Instance.StartResult(isPass);
     }
 
     void DrawReferenceLine(SignatureData data)
@@ -71,20 +76,75 @@ public class SignatureEvaluator : MonoBehaviour
 
     float ComparePaths(List<Vector3> drawn, List<Vector3> reference)
     {
-        if (drawn.Count == 0 || reference.Count == 0) return 0;
+        if (drawn.Count == 0 || reference.Count == 0)
+            return 0f;
 
         int sampleCount = 100;
+
         var d = Resample(drawn, sampleCount);
         var r = Resample(reference, sampleCount);
 
-        float totalDist = 0;
-        for (int i = 0; i < sampleCount; i++)
-            totalDist += Vector3.Distance(d[i], r[i]);
+        NormalizePath(d);
+        NormalizePath(r);
 
-        float avgDist = totalDist / sampleCount;
-        float maxDist = 2f;
-        float similarity = Mathf.Clamp01(1 - (avgDist / maxDist));
-        return similarity;
+        float bestSimilarity = 0f;
+        for (int offset = 0; offset < sampleCount; offset++)
+        {
+            float totalDist = 0f;
+            for (int i = 0; i < sampleCount; i++)
+            {
+                int j = (i + offset) % sampleCount;
+                totalDist += Vector3.Distance(d[i], r[j]);
+            }
+
+            float avgDist = totalDist / sampleCount;
+            float similarity = Mathf.Clamp01(1 - avgDist / 2f);
+
+            if (similarity > bestSimilarity)
+                bestSimilarity = similarity;
+        }
+
+        List<Vector3> reversed = new List<Vector3>(d);
+        reversed.Reverse();
+
+        for (int offset = 0; offset < sampleCount; offset++)
+        {
+            float totalDist = 0f;
+            for (int i = 0; i < sampleCount; i++)
+            {
+                int j = (i + offset) % sampleCount;
+                totalDist += Vector3.Distance(reversed[i], r[j]);
+            }
+
+            float avgDist = totalDist / sampleCount;
+            float similarity = Mathf.Clamp01(1 - avgDist / 2f);
+
+            if (similarity > bestSimilarity)
+                bestSimilarity = similarity;
+        }
+
+        return bestSimilarity;
+    }
+
+    void NormalizePath(List<Vector3> path)
+    {
+        Vector3 center = Vector3.zero;
+        foreach (var p in path)
+            center += p;
+        center /= path.Count;
+
+        for (int i = 0; i < path.Count; i++)
+            path[i] -= center;
+
+        float maxDist = 0f;
+        foreach (var p in path)
+            maxDist = Mathf.Max(maxDist, p.magnitude);
+
+        if (maxDist > 0)
+        {
+            for (int i = 0; i < path.Count; i++)
+                path[i] /= maxDist;
+        }
     }
 
     List<Vector3> Resample(List<Vector3> path, int count)

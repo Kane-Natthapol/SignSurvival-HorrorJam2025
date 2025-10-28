@@ -9,21 +9,33 @@ public class GameSetupState : GameState
 
     public override void EnterState()
     {
+        UIManager.Instance.SetActiveGamePlayPanel(true);
+        //UIManager.Instance.SetTextResult(string.Empty);
 
+        if (Context.isPass)
+        {
+            SignatureTaskManager.Instance.LoadSignature();
+            GameManager.Instance.AddPaper(1);
+        }
     }
 
     public override void UpdateState()
     {
-
+        Context.isStartDraw = true;
     }
 
     public override void ExitState()
     {
-
+        Context.isStartDraw = false;
     }
 
     public override GameStateMachine.EState GetNextState()
     {
+        if(Context.isStartDraw)
+        {
+            return GameStateMachine.EState.DrawTime;
+        }
+
         return StateKey;
     }
 

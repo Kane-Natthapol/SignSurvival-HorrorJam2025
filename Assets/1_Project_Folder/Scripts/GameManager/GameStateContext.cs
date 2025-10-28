@@ -10,17 +10,15 @@ public class GameStateContext
     [SerializeField] public bool isStartGame;
 
     [HorizontalLine("GAME PLAY CONFIG", 1, FixedColor.CloudWhite)]
-    [SerializeField] public bool isPauseGame;
-    [SerializeField] public bool isWaveEnd;
-    [SerializeField] public bool isGameEnd;
-    [SerializeField] public bool isReWave;
+    [SerializeField] public bool isStartDraw;
 
-    [HorizontalLine("GAME PAUSE CONFIG", 1, FixedColor.CloudWhite)]
-    [SerializeField] public bool isContinueGame;
+    [SerializeField] public bool isStartResult;
+    [SerializeField] public bool isPass;
 
-    [HorizontalLine("GAME UPGRADE CONFIG", 1, FixedColor.CloudWhite)]
-    [SerializeField] public bool isSelectedUppgrade;
+    [SerializeField] public bool isStartSetup;
 
-    [HorizontalLine("GAME END CONFIG", 1, FixedColor.CloudWhite)]
+    [HorizontalLine("GAME END", 1, FixedColor.CloudWhite)]
+    [SerializeField] public ResultEndGame resultEndGame;
+    [SerializeField] public bool isStartEndGame;
     [SerializeField] public bool isRestartGame;
 }
