@@ -9,8 +9,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] GameObject mainMenuPanel;
     [SerializeField] Button startGameButton;
     [SerializeField] Button quitGameButton;
-    [SerializeField] Button quitGameButtonTwo;
-    [SerializeField] Button restartGameButtonTwo;
+
 
     [HorizontalLine("GAME END", 1, FixedColor.CloudWhite)]
     [SerializeField] GameObject gameEndPanel;
@@ -19,22 +18,15 @@ public class UIManager : Singleton<UIManager>
     [HorizontalLine("GAME PAUSE", 1, FixedColor.CloudWhite)]
     [SerializeField] GameObject gamePausePanel;
     [SerializeField] Button gameContinueButton;
+    [SerializeField] Button restartGamePauseButtonTwo;
 
     [HorizontalLine("GAME PLAY", 1, FixedColor.CloudWhite)]
     [SerializeField] GameObject gamePlayPanel;
-    [SerializeField] TextMeshProUGUI gameWaveText;
-    [SerializeField] TextMeshProUGUI gameEnemySpawnText;
-    [SerializeField] TextMeshProUGUI gameEnemyDieText;
-    [SerializeField] TextMeshProUGUI playerHealthText;
-    [SerializeField] TextMeshProUGUI wildFireCooldownText;
+    [SerializeField] TextMeshProUGUI timeCoolDownText;
+    [SerializeField] TextMeshProUGUI healthText;
+    [SerializeField] TextMeshProUGUI pageCountText;
 
-    [HorizontalLine("UPGRADE", 1, FixedColor.CloudWhite)]
-    [SerializeField] GameObject upgradePanel;
-    [SerializeField] Button selectUpgradeButton;
-    [SerializeField] Button rerollUpgradeButton;
-    [SerializeField] TextMeshProUGUI rerollUpgradeText;
-    [SerializeField] TextMeshProUGUI logUpgradeText;
-    [SerializeField] TextMeshProUGUI logUpgradeTextEnd;
+    //[HorizontalLine("SETTING", 1, FixedColor.CloudWhite)]
 
     private void Start()
     {
@@ -46,11 +38,9 @@ public class UIManager : Singleton<UIManager>
         //MAIN MENU
         startGameButton.onClick.AddListener(ClickStartGame);
         quitGameButton.onClick.AddListener(ClickQuitGame);
-        quitGameButtonTwo.onClick.AddListener(ClickQuitGame);
 
         //GAME END
         restartButton.onClick.AddListener(ClickReStartGame);
-        restartGameButtonTwo.onClick.AddListener(ClickReStartGame);
 
         //GAME PAUSE
         gameContinueButton.onClick.AddListener(ClickContinue);
@@ -73,26 +63,6 @@ public class UIManager : Singleton<UIManager>
 
     void ClickContinue() => NothingMethoid();
     #endregion
-
-    #region GAME PLAY PANEL
-    public void SetActiveGamePlayPanel(bool isBool) => gamePlayPanel.SetActive(isBool);
-    public void SetActiveWildFireCooldownText(bool isBool) => wildFireCooldownText.gameObject.SetActive(isBool);
-    public void SetTextGameWave(string text) => gameWaveText.text = text;
-    public void SetTextEnemySpawn(string text) => gameEnemySpawnText.text = text;
-    public void SetTextEnemyDie(string text) => gameEnemyDieText.text = text;
-    public void SetTextPlayerHealth(string text) => playerHealthText.text = text;
-    public void SetTextWildfireCooldown(string text) => wildFireCooldownText.text = text;
-    #endregion
-
-    #region UPGRADE PANEL
-    public void SetActiveUpgradePanel(bool isBool) => upgradePanel.SetActive(isBool);
-    public void SetInteractableSelectUpgradeButton(bool isBool) => selectUpgradeButton.interactable = isBool;
-    public void SetInteractableRerollUpgradeButton(bool isBool) => rerollUpgradeButton.interactable = isBool;
-    public void SetTextRerollUpgradeButton(string text) => rerollUpgradeText.text = text;
-    #endregion
-
-    public void SetTextLogUpgradeText(string text) => logUpgradeText.text = text += logUpgradeText.text;
-    public void SetTextLogUpgradeTextEnd() => logUpgradeTextEnd.text = logUpgradeText.text;
 
     void ClickQuitGame()  =>  Application.Quit();
 

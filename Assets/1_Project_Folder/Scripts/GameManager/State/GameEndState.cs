@@ -12,7 +12,6 @@ public class GameEndState : GameState
     {
         Time.timeScale = 0;
         UIManager.Instance.SetActiveGameEndPanel(true);
-        UIManager.Instance.SetTextLogUpgradeTextEnd();
     }
 
     public override void UpdateState()
