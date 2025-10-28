@@ -50,13 +50,14 @@ public class SignatureDrawer : MonoBehaviour
         AddPoint(startPos);
     }
 
-    void AddPoint(Vector2 point)
+    void AddPoint(Vector2 worldPoint)
     {
-        if (points.Count == 0 || Vector2.Distance(points[^1], point) > minDistance)
+        Vector3 localPoint = transform.InverseTransformPoint(worldPoint);
+        if (points.Count == 0 || Vector2.Distance(points[^1], localPoint) > minDistance)
         {
-            points.Add(point);
+            points.Add(localPoint);
             line.positionCount = points.Count;
-            line.SetPosition(points.Count - 1, point);
+            line.SetPosition(points.Count - 1, localPoint);
         }
     }
 

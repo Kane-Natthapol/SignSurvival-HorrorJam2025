@@ -41,7 +41,8 @@ public class SignatureEvaluator : MonoBehaviour
             return;
         }
 
-        float similarity = ComparePaths(drawnPoints, currentData.referencePoints);
+        var localRef = new List<Vector3>(currentData.referencePoints);
+        float similarity = ComparePaths(drawnPoints, localRef);
         Debug.Log($"Similarity: {similarity:F2}");
 
         if (similarity >= threshold)
@@ -60,6 +61,7 @@ public class SignatureEvaluator : MonoBehaviour
             return;
         }
 
+        referenceLine.useWorldSpace = false;
         referenceLine.positionCount = data.referencePoints.Count;
         referenceLine.SetPositions(data.referencePoints.ToArray());
         referenceLine.startColor = referenceColor;

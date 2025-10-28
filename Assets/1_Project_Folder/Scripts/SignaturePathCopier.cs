@@ -25,6 +25,13 @@ public class SignaturePathCopier : EditorWindow
                 targetData.referencePoints.Clear();
                 Vector3[] pts = new Vector3[line.positionCount];
                 line.GetPositions(pts);
+
+                if (line.useWorldSpace)
+                {
+                    for (int i = 0; i < pts.Length; i++)
+                        pts[i] = line.transform.InverseTransformPoint(pts[i]);
+                }
+
                 targetData.referencePoints.AddRange(pts);
                 EditorUtility.SetDirty(targetData);
                 Debug.Log("Path copied to SignatureData!");
