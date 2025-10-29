@@ -13,6 +13,9 @@ public class GameSetupState : GameState
         //UIManager.Instance.SetTextResult(string.Empty);
         HandManager.Instance.Idle();
 
+        LightManager.Instance.SetActiveLightSignature(true);
+        LightManager.Instance.SetActiveLightHand(false);
+
         if (Context.isPass)
         {
             SignatureTaskManager.Instance.LoadSignature();

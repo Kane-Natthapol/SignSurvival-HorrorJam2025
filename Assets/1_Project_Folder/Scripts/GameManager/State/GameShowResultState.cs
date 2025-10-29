@@ -11,6 +11,9 @@ public class GameShowResultState : GameState
     {
         if(Context.resultEndGame == ResultEndGame.Loser)
         {
+            LightManager.Instance.SetActiveLightSignature(false);
+            LightManager.Instance.SetActiveLightHand(true);
+
             HandManager.Instance.StartHandCutOffAll(GameManager.Instance.CheckHealthPlayer());
             //Context.isStartEndGame = true;
             Context.waitNextState = WaitNextState.NextStartEndGame;
@@ -19,6 +22,9 @@ public class GameShowResultState : GameState
         {
             if (!Context.isPass)
             {
+                LightManager.Instance.SetActiveLightSignature(false);
+                LightManager.Instance.SetActiveLightHand(true);
+
                 GameManager.Instance.AddHealthPlayer(1);
 
                 if (GameManager.Instance.CheckHealthPlayer() == 0)
