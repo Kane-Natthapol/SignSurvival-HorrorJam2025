@@ -11,8 +11,9 @@ public class GameShowResultState : GameState
     {
         if(Context.resultEndGame == ResultEndGame.Loser)
         {
-            Debug.Log("CUT ALL");
-            Context.isStartEndGame = true;
+            HandManager.Instance.StartHandCutOffAll(GameManager.Instance.CheckHealthPlayer());
+            //Context.isStartEndGame = true;
+            Context.waitNextState = WaitNextState.NextStartEndGame;
         }
         else
         {
@@ -23,13 +24,16 @@ public class GameShowResultState : GameState
                 if (GameManager.Instance.CheckHealthPlayer() == 0)
                 {
                     Context.resultEndGame = ResultEndGame.Loser;
-                    Context.isStartEndGame = true;
+                    //Context.isStartEndGame = true;
+                    Context.waitNextState = WaitNextState.NextStartEndGame;
                 }
                 else
                 {
-                    Debug.Log("CUT ONE");
-                    Context.isStartSetup = true;
+                    //Context.isStartSetup = true;
+                    Context.waitNextState = WaitNextState.NextStartSetup;
                 }
+
+                HandManager.Instance.StartHandCutOff(GameManager.Instance.CheckHealthPlayer());
             }
             else
             {

@@ -54,6 +54,18 @@ public class GameStateMachine : StateManager<GameStateMachine.EState>
         SceneManager.LoadScene(currentScene);
     }
 
+    public void ResultFinised()
+    {
+        if(context.waitNextState == WaitNextState.NextStartEndGame)
+        {
+            context.isStartEndGame = true;
+        }
+        else if(context.waitNextState == WaitNextState.NextStartSetup)
+        {
+            context.isStartSetup = true;
+        }
+    }
+
     private void InitializeStates()
     {
         States.Add(EState.Mainmenu, new GameMainmenuState(context, EState.Mainmenu));

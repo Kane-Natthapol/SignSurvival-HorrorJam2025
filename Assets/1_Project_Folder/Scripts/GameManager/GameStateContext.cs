@@ -6,6 +6,7 @@ public class GameStateContext
 {
     public GameStateMachine stateMachine { get; set; }
 
+    [SerializeField] public WaitNextState waitNextState;
     [HorizontalLine("MAIN MENU CONFIG", 1, FixedColor.CloudWhite)]
     [SerializeField] public bool isStartGame;
 

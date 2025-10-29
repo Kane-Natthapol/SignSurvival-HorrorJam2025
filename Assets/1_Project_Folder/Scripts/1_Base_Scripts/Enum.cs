@@ -1,8 +1,8 @@
-public enum ResultDraw
+public enum WaitNextState
 {
     None = 0,
-    Success = 1,
-    Fail = 2
+    NextStartEndGame = 1,
+    NextStartSetup = 2
 }
 
 public enum ResultEndGame

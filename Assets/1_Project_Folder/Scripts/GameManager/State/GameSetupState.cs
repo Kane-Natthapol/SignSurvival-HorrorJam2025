@@ -11,6 +11,7 @@ public class GameSetupState : GameState
     {
         UIManager.Instance.SetActiveGamePlayPanel(true);
         //UIManager.Instance.SetTextResult(string.Empty);
+        HandManager.Instance.Idle();
 
         if (Context.isPass)
         {
