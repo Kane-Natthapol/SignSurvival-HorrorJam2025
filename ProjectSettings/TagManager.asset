@@ -42,20 +42,13 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Environment
-    uniqueID: 831635461
+    uniqueID: 2394703227
     locked: 0
   - name: Hand
-    uniqueID: 3561504093
+    uniqueID: 2863738473
     locked: 0
   - name: Equipment
-    uniqueID: 1277243295
+    uniqueID: 1941094571
     locked: 0
   m_RenderingLayers:
   - Default
-  - Light Layer 1
-  - Light Layer 2
-  - Light Layer 3
-  - Light Layer 4
-  - Light Layer 5
-  - Light Layer 6
-  - Light Layer 7
