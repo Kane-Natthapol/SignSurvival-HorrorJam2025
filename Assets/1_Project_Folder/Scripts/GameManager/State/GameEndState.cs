@@ -37,7 +37,7 @@ public class GameEndState : GameState
     {
         if (Context.isRestartGame)
         {
-            Context.stateMachine.RestartGame();
+            
         }
 
         return StateKey;

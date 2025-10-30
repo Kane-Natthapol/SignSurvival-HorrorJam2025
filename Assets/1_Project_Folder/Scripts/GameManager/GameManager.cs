@@ -1,5 +1,6 @@
 using CustomInspector;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -18,6 +19,17 @@ public class GameManager : Singleton<GameManager>
 
     [HorizontalLine("SIGNATURE EVALUATOR DATA", 1, FixedColor.CloudWhite)]
     [Range(0f, 1f)] public float evaluatorThreshold = 0.8f;
+
+    [HorizontalLine("FaceBlood", 1, FixedColor.CloudWhite)]
+    [SerializeField] float randomFaceBlood;
+    [SerializeField] GameObject faceBloodGameObject;
+
+    [HorizontalLine("PaperBlood", 1, FixedColor.CloudWhite)]
+    [SerializeField] float randomPaperBlood;
+
+    [HorizontalLine("LightOut", 1, FixedColor.CloudWhite)]
+    [SerializeField] int startPaperRandom;
+    [SerializeField] float randomLightOut;
 
     private void Update()
     {
@@ -69,5 +81,41 @@ public class GameManager : Singleton<GameManager>
     {
         currentPaper += num;
         UIManager.Instance.SetTextPageCount(currentPaper.ToString("f0"), maxPaper.ToString("f0"));
+    }
+
+    public void SetRandomBlood()
+    {
+        float randomFaceBlood = Random.Range(0, 100);
+        if(randomFaceBlood >= randomFaceBlood)
+        {
+            SetActiveFaceBlood(false);
+            SetActiveFaceBlood(true);
+        }
+
+        float randomPaperBlood = Random.Range(0, 100);
+        if (randomPaperBlood >= randomPaperBlood)
+        {
+            PaperManager.Instance.SetActiveBloodPaper(true);
+        }
+    }
+    public void SetActiveFaceBlood(bool isBool) => faceBloodGameObject.SetActive(isBool);
+
+
+    public bool CheckCanRandomLightOut() => currentPaper >= startPaperRandom;
+    public void SetRandomRightOut()
+    {
+        float random = Random.Range(0, 100);
+
+        if (randomLightOut >= random)
+        {
+            LightManager.Instance.SetLightOutSingnature();
+        }
+    }
+
+    public void ReStartGame()
+    {
+        Time.timeScale = 1;
+        string currentScene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentScene);
     }
 }

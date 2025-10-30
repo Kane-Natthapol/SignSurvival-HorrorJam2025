@@ -13,19 +13,22 @@ public class GameSetupState : GameState
         //UIManager.Instance.SetTextResult(string.Empty);
         HandManager.Instance.Idle();
 
-        LightManager.Instance.SetActiveLightSignature(true);
-        LightManager.Instance.SetActiveLightHand(false);
+        LightManager.Instance.SetActiveLight(LightType.Signature, true);
 
         if (Context.isPass)
         {
-            SignatureTaskManager.Instance.LoadSignature();
             GameManager.Instance.AddPaper(1);
+            PaperManager.Instance.PaperIn();
+        }
+        else
+        {
+            Context.isStartDraw = true;
         }
     }
 
     public override void UpdateState()
     {
-        Context.isStartDraw = true;
+        //Context.isStartDraw = true;
     }
 
     public override void ExitState()

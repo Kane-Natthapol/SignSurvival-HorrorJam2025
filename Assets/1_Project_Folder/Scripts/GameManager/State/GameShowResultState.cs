@@ -11,8 +11,7 @@ public class GameShowResultState : GameState
     {
         if(Context.resultEndGame == ResultEndGame.Loser)
         {
-            LightManager.Instance.SetActiveLightSignature(false);
-            LightManager.Instance.SetActiveLightHand(true);
+            LightManager.Instance.SetActiveLight(LightType.Hand, true);
 
             HandManager.Instance.StartHandCutOffAll(GameManager.Instance.CheckHealthPlayer());
             //Context.isStartEndGame = true;
@@ -22,8 +21,7 @@ public class GameShowResultState : GameState
         {
             if (!Context.isPass)
             {
-                LightManager.Instance.SetActiveLightSignature(false);
-                LightManager.Instance.SetActiveLightHand(true);
+                LightManager.Instance.SetActiveLight(LightType.Hand, true);
 
                 GameManager.Instance.AddHealthPlayer(1);
 
@@ -43,16 +41,19 @@ public class GameShowResultState : GameState
             }
             else
             {
-                SignatureDrawer.Instance.ResetDraw();
                 if (GameManager.Instance.CheckPaper())
                 {
                     Context.resultEndGame = ResultEndGame.Winner;
-                    Context.isStartEndGame = true;
+                    //Context.isStartEndGame = true;
+                    Context.waitNextState = WaitNextState.NextStartEndGame;
                 }
                 else
                 {
-                    Context.isStartSetup = true;
+                    //Context.isStartSetup = true;
+                    Context.waitNextState = WaitNextState.NextStartSetup;
                 }
+
+                PaperManager.Instance.PaperOut();
             }
         }
     }

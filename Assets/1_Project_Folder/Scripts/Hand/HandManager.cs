@@ -94,6 +94,7 @@ public class HandManager : Singleton<HandManager>
     void knifeFingerStart(int index)
     {
         knifeControllers[index].OnCutoff += fingerControllers[index].CutOff;
+        knifeControllers[index].OnCutoff += CameraManager.Instance.CameraShake;
         knifeControllers[index].StartCutOff();
         Scare();
     }
@@ -112,6 +113,7 @@ public class HandManager : Singleton<HandManager>
         }
 
         knifeControllers[4].OnCutoff += fingerControllers[4].CutOff;
+        knifeControllers[4].OnCutoff += CameraManager.Instance.CameraShake;
         knifeControllers[4].StartCutOff();
         Scare();
     }

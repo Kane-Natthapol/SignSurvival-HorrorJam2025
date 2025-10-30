@@ -23,6 +23,8 @@ public class FingerController : MonoBehaviour
         fignerAnim.Play("Finger_Idle", 0, 0);
         fignerAnim.enabled = false;
         Launch();
+
+        GameManager.Instance.SetRandomBlood();
     }
 
     public void Launch()

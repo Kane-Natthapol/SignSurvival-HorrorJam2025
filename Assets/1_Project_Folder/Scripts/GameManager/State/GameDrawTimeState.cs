@@ -10,6 +10,17 @@ public class GameDrawTimeState : GameState
     public override void EnterState()
     {
         GameManager.Instance.SetIsRunTime(true);
+        SignatureDrawer.Instance.CanDraw(true);
+
+        if(GameManager.Instance.CheckCanRandomLightOut())
+        {
+            GameManager.Instance.SetRandomRightOut();
+        }
+        else
+        {
+            int Random = UnityEngine.Random.Range(0, 2);
+            LightManager.Instance.SetLightIdleSingnature(Random);
+        }
     }
 
     public override void UpdateState()
@@ -23,6 +34,7 @@ public class GameDrawTimeState : GameState
 
     public override void ExitState()
     {
+        SignatureDrawer.Instance.CanDraw(false);
         GameManager.Instance.SetIsRunTime(false);
         Context.isStartResult = false;
         Context.isStartEndGame = false;

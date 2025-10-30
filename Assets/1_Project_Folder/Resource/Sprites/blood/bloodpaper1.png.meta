@@ -1,0 +1,1131 @@
+fileFormatVersion: 2
+guid: 23578ba3a4b829f4397c91a99389662a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6000171124284899461
+    second: bloodpaper1_0
+  - first:
+      213: -2942423832306880624
+    second: bloodpaper1_1
+  - first:
+      213: 2888018592727164184
+    second: bloodpaper1_2
+  - first:
+      213: 456135339416734457
+    second: bloodpaper1_3
+  - first:
+      213: 6459130108243738084
+    second: bloodpaper1_4
+  - first:
+      213: 9157171998978757065
+    second: bloodpaper1_5
+  - first:
+      213: -2957047945705853151
+    second: bloodpaper1_6
+  - first:
+      213: 5954133606825452679
+    second: bloodpaper1_7
+  - first:
+      213: 5619997470217447875
+    second: bloodpaper1_8
+  - first:
+      213: -487413819638736299
+    second: bloodpaper1_9
+  - first:
+      213: -4700617397744927414
+    second: bloodpaper1_10
+  - first:
+      213: 7006351320542430174
+    second: bloodpaper1_11
+  - first:
+      213: 856340085016804467
+    second: bloodpaper1_12
+  - first:
+      213: 6069279784706127991
+    second: bloodpaper1_13
+  - first:
+      213: 6856934442826100444
+    second: bloodpaper1_14
+  - first:
+      213: -7366002107427758735
+    second: bloodpaper1_15
+  - first:
+      213: -2170555548505767012
+    second: bloodpaper1_16
+  - first:
+      213: -6146422981825787541
+    second: bloodpaper1_17
+  - first:
+      213: 3037382224542396276
+    second: bloodpaper1_18
+  - first:
+      213: 6345168905827457200
+    second: bloodpaper1_19
+  - first:
+      213: 6727702726125495761
+    second: bloodpaper1_20
+  - first:
+      213: 1764403482972983487
+    second: bloodpaper1_21
+  - first:
+      213: -9126663546501493277
+    second: bloodpaper1_22
+  - first:
+      213: -5064457999091316823
+    second: bloodpaper1_23
+  - first:
+      213: 8507229130114737197
+    second: bloodpaper1_24
+  - first:
+      213: -7949318371640384563
+    second: bloodpaper1_25
+  - first:
+      213: -5892157275661547018
+    second: bloodpaper1_26
+  - first:
+      213: 3301203893306791388
+    second: bloodpaper1_27
+  - first:
+      213: 6408703189941207971
+    second: bloodpaper1_28
+  - first:
+      213: 3467006205905049809
+    second: bloodpaper1_29
+  - first:
+      213: 7978460539245223777
+    second: bloodpaper1_30
+  - first:
+      213: -3418731873792080025
+    second: bloodpaper1_31
+  - first:
+      213: -6001787098727830535
+    second: bloodpaper1_32
+  - first:
+      213: 2076520997506248650
+    second: bloodpaper1_33
+  - first:
+      213: -7714168602033001453
+    second: bloodpaper1_34
+  - first:
+      213: -5657611563493874222
+    second: bloodpaper1_35
+  - first:
+      213: 2481651564928936899
+    second: bloodpaper1_36
+  - first:
+      213: 2308445841721228004
+    second: bloodpaper1_37
+  - first:
+      213: 7206926344380179600
+    second: bloodpaper1_38
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bloodpaper1_0
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 455
+        width: 53
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7f3179172c1bbca0800000000000000
+      internalID: -6000171124284899461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_1
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 451
+        width: 31
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09f64b83d196a27d0800000000000000
+      internalID: -2942423832306880624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_2
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 489
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 815e934db9d441820800000000000000
+      internalID: 2888018592727164184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_3
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 486
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9facf6baca4845600800000000000000
+      internalID: 456135339416734457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_4
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 447
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4edf5eb8c9073a950800000000000000
+      internalID: 6459130108243738084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_5
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 463
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c158429a6fc41f70800000000000000
+      internalID: 9157171998978757065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_6
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 452
+        width: 47
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12f676c7f8476f6d0800000000000000
+      internalID: -2957047945705853151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_7
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 71
+        width: 346
+        height: 370
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 784eb0418f451a250800000000000000
+      internalID: 5954133606825452679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_8
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 435
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c9a7e25ced3efd40800000000000000
+      internalID: 5619997470217447875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_9
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 428
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55a11d5a6bb5c39f0800000000000000
+      internalID: -487413819638736299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_10
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 436
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4d7466b16d04ceb0800000000000000
+      internalID: -4700617397744927414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_11
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 381
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed34580a76f8b3160800000000000000
+      internalID: 7006351320542430174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_12
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 380
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37cba5e25c452eb00800000000000000
+      internalID: 856340085016804467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_13
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 365
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7783ed9cec96a3450800000000000000
+      internalID: 6069279784706127991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_14
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 356
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cde6ac0db89b82f50800000000000000
+      internalID: 6856934442826100444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_15
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 337
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17d5dfb2c14b6c990800000000000000
+      internalID: -7366002107427758735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_16
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 336
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c938f0e8a33a0e1e0800000000000000
+      internalID: -2170555548505767012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 289
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b690af8fcd483baa0800000000000000
+      internalID: -6146422981825787541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_18
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 294
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47f6fec5a03f62a20800000000000000
+      internalID: 3037382224542396276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_19
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 268
+        width: 34
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b813bf60819e0850800000000000000
+      internalID: 6345168905827457200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_20
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 257
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d523290cf99d5d50800000000000000
+      internalID: 6727702726125495761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 241
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb0111b9e9b6c7810800000000000000
+      internalID: 1764403482972983487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_22
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 232
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ed854e0cd3975180800000000000000
+      internalID: -9126663546501493277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_23
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 228
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a7c640584e67b9b0800000000000000
+      internalID: -5064457999091316823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_24
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 234
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d24285312dfbf0670800000000000000
+      internalID: 8507229130114737197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_25
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 204
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc363ebee095ea190800000000000000
+      internalID: -7949318371640384563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_26
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 215
+        width: 15
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f9c57ffc2ada3ea0800000000000000
+      internalID: -5892157275661547018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_27
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 207
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd510bf437b30dd20800000000000000
+      internalID: 3301203893306791388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_28
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 142
+        width: 29
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a3cb53b89940f850800000000000000
+      internalID: 6408703189941207971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_29
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 178
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d89b0976c74d1030800000000000000
+      internalID: 3467006205905049809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_30
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 27
+        width: 21
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16fde28b69f29be60800000000000000
+      internalID: 7978460539245223777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_31
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 97
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 767415859793e80d0800000000000000
+      internalID: -3418731873792080025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_32
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 68
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fb2ecabe6e55bca0800000000000000
+      internalID: -6001787098727830535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_33
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 63
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acfeff868d841dc10800000000000000
+      internalID: 2076520997506248650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_34
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 46
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31ce9522784c1f490800000000000000
+      internalID: -7714168602033001453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_35
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 52
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d52ec022402c71b0800000000000000
+      internalID: -5657611563493874222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_36
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 17
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cba1ef23f8907220800000000000000
+      internalID: 2481651564928936899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_37
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 0
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ea750b234f390020800000000000000
+      internalID: 2308445841721228004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodpaper1_38
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 0
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0946f278355240460800000000000000
+      internalID: 7206926344380179600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      bloodpaper1_0: -6000171124284899461
+      bloodpaper1_1: -2942423832306880624
+      bloodpaper1_10: -4700617397744927414
+      bloodpaper1_11: 7006351320542430174
+      bloodpaper1_12: 856340085016804467
+      bloodpaper1_13: 6069279784706127991
+      bloodpaper1_14: 6856934442826100444
+      bloodpaper1_15: -7366002107427758735
+      bloodpaper1_16: -2170555548505767012
+      bloodpaper1_17: -6146422981825787541
+      bloodpaper1_18: 3037382224542396276
+      bloodpaper1_19: 6345168905827457200
+      bloodpaper1_2: 2888018592727164184
+      bloodpaper1_20: 6727702726125495761
+      bloodpaper1_21: 1764403482972983487
+      bloodpaper1_22: -9126663546501493277
+      bloodpaper1_23: -5064457999091316823
+      bloodpaper1_24: 8507229130114737197
+      bloodpaper1_25: -7949318371640384563
+      bloodpaper1_26: -5892157275661547018
+      bloodpaper1_27: 3301203893306791388
+      bloodpaper1_28: 6408703189941207971
+      bloodpaper1_29: 3467006205905049809
+      bloodpaper1_3: 456135339416734457
+      bloodpaper1_30: 7978460539245223777
+      bloodpaper1_31: -3418731873792080025
+      bloodpaper1_32: -6001787098727830535
+      bloodpaper1_33: 2076520997506248650
+      bloodpaper1_34: -7714168602033001453
+      bloodpaper1_35: -5657611563493874222
+      bloodpaper1_36: 2481651564928936899
+      bloodpaper1_37: 2308445841721228004
+      bloodpaper1_38: 7206926344380179600
+      bloodpaper1_4: 6459130108243738084
+      bloodpaper1_5: 9157171998978757065
+      bloodpaper1_6: -2957047945705853151
+      bloodpaper1_7: 5954133606825452679
+      bloodpaper1_8: 5619997470217447875
+      bloodpaper1_9: -487413819638736299
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

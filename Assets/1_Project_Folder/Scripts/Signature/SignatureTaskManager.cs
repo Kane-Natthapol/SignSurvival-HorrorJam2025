@@ -8,6 +8,7 @@ public class SignatureTaskManager : Singleton<SignatureTaskManager>
 
     public void LoadSignature()
     {
+        SignatureDrawer.Instance.ResetDraw();
         currentIndex = Random.Range(0, allSignatures.Count);
 
         if (currentIndex < 0 || currentIndex >= allSignatures.Count) return;

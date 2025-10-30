@@ -44,11 +44,17 @@ TagManager:
   - name: Environment
     uniqueID: 2394703227
     locked: 0
+  - name: Paper
+    uniqueID: 2610339175
+    locked: 0
   - name: Hand
     uniqueID: 2863738473
     locked: 0
   - name: Equipment
     uniqueID: 1941094571
+    locked: 0
+  - name: FaceBlood
+    uniqueID: 624871067
     locked: 0
   m_RenderingLayers:
   - Default

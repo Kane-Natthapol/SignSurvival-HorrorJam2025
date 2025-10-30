@@ -11,6 +11,9 @@ public class SignatureDrawer : Singleton<SignatureDrawer>
     private LineRenderer line;
     private List<Vector3> points = new List<Vector3>();
     private bool isDrawing;
+    private bool canDraw;
+
+    public void CanDraw(bool isBool) => canDraw = isBool;
 
     void Awake()
     {
@@ -22,6 +25,8 @@ public class SignatureDrawer : Singleton<SignatureDrawer>
     {
         if (Input.GetMouseButtonDown(0))
         {
+            if (!canDraw) return;
+
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (drawArea != null && drawArea.IsInside(mousePos))
             {
@@ -31,6 +36,8 @@ public class SignatureDrawer : Singleton<SignatureDrawer>
 
         if (Input.GetMouseButton(0) && isDrawing)
         {
+            if (!canDraw) return;
+
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (drawArea.IsInside(mousePos))
                 AddPoint(mousePos);

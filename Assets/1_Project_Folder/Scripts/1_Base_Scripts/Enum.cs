@@ -11,3 +11,10 @@ public enum ResultEndGame
     Winner = 1,
     Loser = 2
 }
+
+public enum LightType
+{
+    None = 0,
+    Signature = 1,
+    Hand = 2
+}

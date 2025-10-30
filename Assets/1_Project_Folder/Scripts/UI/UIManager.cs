@@ -47,14 +47,19 @@ public class UIManager : Singleton<UIManager>
     #region MAIN MENU PANEL
     public void SetActiveMainMenuPanel(bool isBool) => mainMenuPanel.SetActive(isBool);
 
-    void ClickStartGame() => GameStateMachine.Instance.StartGame();
+    void ClickStartGame()
+    {
+        SetActiveMainMenuPanel(false);
+        CameraManager.Instance.CameraSetUp();
+    }
+
     void ClickQuitGame() => Application.Quit();
     #endregion
 
     #region GAME END PANEL
     public void SetActiveGameEndPanel(bool isBool) => gameEndPanel.SetActive(isBool);
 
-    void ClickReStartGame() => GameStateMachine.Instance.StartReStartGame();
+    void ClickReStartGame() => UIFadeManager.Instance.FadeIn();
     public void SetTextResultEndGame(string text) => resultEndGameText.text = $"{text}";
     #endregion
 

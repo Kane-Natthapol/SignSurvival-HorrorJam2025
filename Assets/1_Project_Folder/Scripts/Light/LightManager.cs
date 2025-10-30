@@ -8,13 +8,52 @@ public class LightManager : Singleton<LightManager>
     [SerializeField] Light2D spotLightHand;
     [SerializeField] Animator spotLightHandAnim;
 
-    public void SetActiveLightSignature(bool isBool)
+    public void SetActiveLight(LightType type, bool isBool)
     {
-        spotLightSignature.gameObject.SetActive(isBool);
+        switch(type)
+        {
+            case LightType.Signature:
+                SetActiveLightType(spotLightSigAnim, isBool);
+                SetActiveLightType(spotLightHandAnim, !isBool);
+                break;
+
+            case LightType.Hand:
+                SetActiveLightType(spotLightSigAnim, !isBool);
+                SetActiveLightType(spotLightHandAnim, isBool);
+                break;
+        }
     }
 
-    public void SetActiveLightHand(bool isBool)
+    public void SetActiveLightType(Animator anim, bool isOn)
     {
-        spotLightHand.gameObject.SetActive(isBool);
+        AnimatorStateInfo currentState = anim.GetCurrentAnimatorStateInfo(0);
+        if (isOn) 
+        {
+            if (!currentState.IsTag("In"))
+            {
+                anim.Play("Light_In", 0, 0);
+            }
+        }
+        else
+        {
+            if (!currentState.IsTag("Out"))
+            {
+                anim.Play("Light_Out", 0, 0);
+            }
+        }
+    }
+
+    public void SetLightOutSingnature() => spotLightSigAnim.Play("Light_Over", 0, 0);
+    public void SetLightIdleSingnature(int random)
+    {
+        switch(random)
+        {
+            case 0:
+                spotLightSigAnim.Play("Light_Idle", 0, 0);
+                break;
+            default:
+                spotLightSigAnim.Play("Light_Idle2", 0, 0);
+                break;
+        }
     }
 }

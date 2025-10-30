@@ -47,13 +47,6 @@ public class GameStateMachine : StateManager<GameStateMachine.EState>
     //GAME END
     public void StartReStartGame() => context.isRestartGame = true;
 
-    public void RestartGame()
-    {
-        Time.timeScale = 1;
-        string currentScene = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currentScene);
-    }
-
     public void ResultFinised()
     {
         if(context.waitNextState == WaitNextState.NextStartEndGame)
