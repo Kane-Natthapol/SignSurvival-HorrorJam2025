@@ -9,6 +9,7 @@ public class HandManager : Singleton<HandManager>
     [SerializeField] List<FingerController> fingerControllers;
     [SerializeField] List<PlierController> plierControllers;
     [SerializeField] List<KnifeController> knifeControllers;
+    [SerializeField] List<BloodFingerManager> bloodFingerManagers;
 
     [SerializeField] int currentIndex;
 
@@ -96,6 +97,7 @@ public class HandManager : Singleton<HandManager>
         knifeControllers[index].OnCutoff += fingerControllers[index].CutOff;
         knifeControllers[index].OnCutoff += CameraManager.Instance.CameraShake;
         knifeControllers[index].OnCutoff += GameManager.Instance.SetActivateTableBlood;
+        knifeControllers[index].OnCutoff += ()=> bloodFingerManagers[index].PlayBloodForDuration(GlobalConstraints.FLOAT_BLOOD_FINGER_DURATION);
         knifeControllers[index].StartCutOff();
         Scare();
     }
@@ -107,13 +109,22 @@ public class HandManager : Singleton<HandManager>
         if(currentIndex > 1)
         {
             knifeControllers[3].OnCutoff += fingerControllers[0].CutOff;
+            knifeControllers[3].OnCutoff += () => bloodFingerManagers[0].PlayBloodForDuration(GlobalConstraints.FLOAT_BLOOD_FINGER_DURATION);
+
             knifeControllers[3].OnCutoff += fingerControllers[1].CutOff;
+            knifeControllers[3].OnCutoff += () => bloodFingerManagers[1].PlayBloodForDuration(GlobalConstraints.FLOAT_BLOOD_FINGER_DURATION);
+
             knifeControllers[3].OnCutoff += fingerControllers[2].CutOff;
+            knifeControllers[3].OnCutoff += () => bloodFingerManagers[2].PlayBloodForDuration(GlobalConstraints.FLOAT_BLOOD_FINGER_DURATION);
+
             knifeControllers[3].OnCutoff += fingerControllers[3].CutOff;
+            knifeControllers[3].OnCutoff += () => bloodFingerManagers[3].PlayBloodForDuration(GlobalConstraints.FLOAT_BLOOD_FINGER_DURATION);
+
             knifeControllers[3].StartCutOff();
         }
 
         knifeControllers[4].OnCutoff += fingerControllers[4].CutOff;
+        knifeControllers[4].OnCutoff += () => bloodFingerManagers[4].PlayBloodForDuration(GlobalConstraints.FLOAT_BLOOD_FINGER_DURATION);
         knifeControllers[4].OnCutoff += CameraManager.Instance.CameraShake;
         knifeControllers[4].OnCutoff += GameManager.Instance.SetActivateTableBlood;
         knifeControllers[4].StartCutOff();

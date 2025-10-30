@@ -30,4 +30,6 @@ public static class GlobalConstraints
     public const string STRING_SOUND_UI_CONFIRM = "UI_Confirm";
     public const string STRING_SOUND_UI_CLICK = "UI_Click";
     public const string STRING_SOUND_UI_CANCEL = "UI_Cancel";
+
+    public const float FLOAT_BLOOD_FINGER_DURATION = 5f;
 }

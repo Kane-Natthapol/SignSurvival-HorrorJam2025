@@ -66,9 +66,9 @@ public class UIManager : Singleton<UIManager>
     #region GAME PLAY
     public void SetActiveGamePlayPanel(bool isBool) => gamePlayPanel.SetActive(isBool);
 
-    public void SetTextTimeCoolDown(string time) => timeCoolDownText.text = $"Time : {time}";
+    public void SetTextTimeCoolDown(string time) => timeCoolDownText.text = $"{time}";
     public void SetTextHealth(string hp) => healthText.text = $"HP : {hp}";
-    public void SetTextPageCount(string currentPage,string allPage) => pageCountText.text = $"Page : {currentPage}/{allPage}";
+    public void SetTextPageCount(string currentPage,string allPage) => pageCountText.text = $"{currentPage}/{allPage}";
     public void SetTextResult(string text) => resultText.text = $"{text}";
     #endregion
 
