@@ -11,7 +11,7 @@ public class GameSetupState : GameState
     {
         UIManager.Instance.SetActiveGamePlayPanel(true);
         //UIManager.Instance.SetTextResult(string.Empty);
-        HandManager.Instance.Idle();
+        if(GameManager.Instance.CheckHealthPlayer() > 4)HandManager.Instance.Idle();
 
         LightManager.Instance.SetActiveLight(LightType.Signature, true);
 

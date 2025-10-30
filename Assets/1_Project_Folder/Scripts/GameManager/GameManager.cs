@@ -24,6 +24,10 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] float randomFaceBlood;
     [SerializeField] GameObject faceBloodGameObject;
 
+    [HorizontalLine("TableBlood", 1, FixedColor.CloudWhite)]
+    [SerializeField] GameObject TableBloodOne;
+    [SerializeField] GameObject TableBloodTwo;
+
     [HorizontalLine("PaperBlood", 1, FixedColor.CloudWhite)]
     [SerializeField] float randomPaperBlood;
 
@@ -117,5 +121,17 @@ public class GameManager : Singleton<GameManager>
         Time.timeScale = 1;
         string currentScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentScene);
+    }
+
+    public void SetActivateTableBlood()
+    {
+        if(TableBloodOne.activeSelf == false)
+        {
+            TableBloodOne.SetActive(true);
+        }
+        else if(TableBloodTwo.activeSelf == false)
+        {
+            TableBloodTwo.SetActive(true);
+        }
     }
 }

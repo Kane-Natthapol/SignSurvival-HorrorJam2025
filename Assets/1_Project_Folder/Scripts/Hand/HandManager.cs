@@ -95,6 +95,7 @@ public class HandManager : Singleton<HandManager>
     {
         knifeControllers[index].OnCutoff += fingerControllers[index].CutOff;
         knifeControllers[index].OnCutoff += CameraManager.Instance.CameraShake;
+        knifeControllers[index].OnCutoff += GameManager.Instance.SetActivateTableBlood;
         knifeControllers[index].StartCutOff();
         Scare();
     }
@@ -114,6 +115,7 @@ public class HandManager : Singleton<HandManager>
 
         knifeControllers[4].OnCutoff += fingerControllers[4].CutOff;
         knifeControllers[4].OnCutoff += CameraManager.Instance.CameraShake;
+        knifeControllers[4].OnCutoff += GameManager.Instance.SetActivateTableBlood;
         knifeControllers[4].StartCutOff();
         Scare();
     }
