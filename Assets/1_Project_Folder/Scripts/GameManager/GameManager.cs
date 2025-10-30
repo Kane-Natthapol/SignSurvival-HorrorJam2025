@@ -13,13 +13,6 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] public float maxTime = 0f;
     [SerializeField] public float currentTime = 0f;
 
-    [HorizontalLine("SIGNATURE DATA", 1, FixedColor.CloudWhite)]
-    [SerializeField] public int maxPaper = 0;
-    [SerializeField] public int currentPaper = 0;
-
-    [HorizontalLine("SIGNATURE EVALUATOR DATA", 1, FixedColor.CloudWhite)]
-    [Range(0f, 1f)] public float evaluatorThreshold = 0.8f;
-
     [HorizontalLine("FaceBlood", 1, FixedColor.CloudWhite)]
     [SerializeField] float randomFaceBlood;
     [SerializeField] GameObject faceBloodGameObject;
@@ -31,9 +24,20 @@ public class GameManager : Singleton<GameManager>
     [HorizontalLine("PaperBlood", 1, FixedColor.CloudWhite)]
     [SerializeField] float randomPaperBlood;
 
+    [HorizontalLine("Paper DATA", 1, FixedColor.CloudWhite)]
+    [SerializeField] public int maxPaper = 0;
+    [SerializeField] public int currentPaper = 0;
+
+    [HorizontalLine("SIGNATURE EVALUATOR DATA", 1, FixedColor.CloudWhite)]
+    [Range(0f, 1f)] public float evaluatorThreshold = 0.8f;
+
     [HorizontalLine("LightOut", 1, FixedColor.CloudWhite)]
     [SerializeField] int startPaperRandom;
     [SerializeField] float randomLightOut;
+
+    [HorizontalLine("Paper level DATA", 1, FixedColor.CloudWhite)]
+    [SerializeField] public int mediumLevelSignature = 0;
+    [SerializeField] public int hardLevelSignature = 0;
 
     private void Update()
     {
@@ -134,4 +138,7 @@ public class GameManager : Singleton<GameManager>
             TableBloodTwo.SetActive(true);
         }
     }
+
+    public bool CheckHardLevel() => currentPaper >= hardLevelSignature;
+    public bool CheckMediumLevel() => currentPaper >= mediumLevelSignature;
 }

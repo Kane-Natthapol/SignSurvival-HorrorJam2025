@@ -3,19 +3,38 @@ using UnityEngine;
 
 public class SignatureTaskManager : Singleton<SignatureTaskManager>
 {
-    public List<SignatureData> allSignatures;
+    public List<SignatureData> easySignatures;
+    public List<SignatureData> mediumSignatures;
+    public List<SignatureData> hardSignatures;
     public int currentIndex = 0;
 
     public void LoadSignature()
     {
         SignatureDrawer.Instance.ResetDraw();
-        currentIndex = Random.Range(0, allSignatures.Count);
 
-        if (currentIndex < 0 || currentIndex >= allSignatures.Count) return;
-        SignatureEvaluator.Instance.SetSignature(allSignatures[currentIndex]);
-        Debug.Log($"Loaded Signature: {allSignatures[currentIndex].signatureName}");
+        if(GameManager.Instance.CheckHardLevel())
+        {
+            SelectSingnature(hardSignatures);
+        }
+        else if (GameManager.Instance.CheckMediumLevel())
+        {
+            SelectSingnature(mediumSignatures);
+        }
+        else
+        {
+            SelectSingnature(easySignatures);
+        }
+    }
 
-        allSignatures.Remove(allSignatures[currentIndex]);
+    void SelectSingnature(List<SignatureData> listSing)
+    {
+        currentIndex = Random.Range(0, listSing.Count);
+
+        if (currentIndex < 0 || currentIndex >= listSing.Count) return;
+        SignatureEvaluator.Instance.SetSignature(listSing[currentIndex]);
+        Debug.Log($"Loaded Signature: {listSing[currentIndex].signatureName}");
+
+        listSing.Remove(listSing[currentIndex]);
     }
 
 /*    public void NextSignature()

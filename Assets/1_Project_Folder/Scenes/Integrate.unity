@@ -4060,18 +4060,20 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 0
   isRunTime: 0
-  maxTime: 10
+  maxTime: 60
   currentTime: 0
-  maxPaper: 2
-  currentPaper: 0
-  evaluatorThreshold: 0.98
   randomFaceBlood: 50
   faceBloodGameObject: {fileID: 1563864268}
   TableBloodOne: {fileID: 1668068809}
   TableBloodTwo: {fileID: 1712300275}
   randomPaperBlood: 30
+  maxPaper: 10
+  currentPaper: 0
+  evaluatorThreshold: 0.96
   startPaperRandom: 2
   randomLightOut: 50
+  mediumLevelSignature: 4
+  hardLevelSignature: 9
 --- !u!4 &987838044
 Transform:
   m_ObjectHideFlags: 0
@@ -28460,12 +28462,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28f4f995d248b7744b51315d72b287a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SignatureTaskManager
-  allSignatures:
+  easySignatures:
   - {fileID: 11400000, guid: 84a51a11533696d47971fd4c36b35b7a, type: 2}
   - {fileID: 11400000, guid: 709751047afab5249b7c3a852dd585a0, type: 2}
   - {fileID: 11400000, guid: 451329bb38ba0174f8dc4724dc88c8eb, type: 2}
   - {fileID: 11400000, guid: a8266e1b95273884d83a93544d45ac22, type: 2}
+  - {fileID: 11400000, guid: 17358b15a3621c14a9c050b1f201f6be, type: 2}
+  - {fileID: 11400000, guid: c589715041f907d428bbe135958fe0f2, type: 2}
+  - {fileID: 11400000, guid: e9350534dc19ef84ab555096bbf0430d, type: 2}
+  mediumSignatures:
+  - {fileID: 11400000, guid: 7c8e04cb291a5994fb181c1e8b92d5cc, type: 2}
+  - {fileID: 11400000, guid: 763cde25aea1f104d811a29d0bf601f3, type: 2}
+  - {fileID: 11400000, guid: d8744b274ed49b344a4374492db99b19, type: 2}
+  - {fileID: 11400000, guid: 8f6aeccb65c19224992e77abf47a3678, type: 2}
+  - {fileID: 11400000, guid: 713a524fe14a06240b87c04ddf23383d, type: 2}
+  - {fileID: 11400000, guid: aca27d52bf1ddfd42bfe157b2300c5bb, type: 2}
+  - {fileID: 11400000, guid: 5d21595b3c64130439053ae4523628a2, type: 2}
+  - {fileID: 11400000, guid: 75296954ef86a154cb836dce692d22bd, type: 2}
+  hardSignatures:
   - {fileID: 11400000, guid: 7138c70ce1ffdc54db50dd7b9850e8ef, type: 2}
+  - {fileID: 11400000, guid: d321daa91d89fc24b95408ca6c6c0a38, type: 2}
   currentIndex: 0
 --- !u!4 &1860231694
 Transform:
