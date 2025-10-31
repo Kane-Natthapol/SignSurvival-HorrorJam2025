@@ -12,8 +12,10 @@ public class UIManager : Singleton<UIManager>
 
     [HorizontalLine("GAME END", 1, FixedColor.CloudWhite)]
     [SerializeField] GameObject gameEndPanel;
+    [SerializeField] GameObject gameWinPanel;
+    [SerializeField] GameObject gameLosePanel;
     [SerializeField] Button restartButton;
-    [SerializeField] TextMeshProUGUI resultEndGameText;
+    [SerializeField] Button restartButtonTwo;
 
     [HorizontalLine("GAME PAUSE", 1, FixedColor.CloudWhite)]
     [SerializeField] GameObject gamePausePanel;
@@ -42,6 +44,7 @@ public class UIManager : Singleton<UIManager>
 
         //GAME END
         restartButton.onClick.AddListener(ClickReStartGame);
+        restartButtonTwo.onClick.AddListener(ClickReStartGame);
     }
 
     #region MAIN MENU PANEL
@@ -58,9 +61,11 @@ public class UIManager : Singleton<UIManager>
 
     #region GAME END PANEL
     public void SetActiveGameEndPanel(bool isBool) => gameEndPanel.SetActive(isBool);
+    public void SetActiveGameWinPanel(bool isBool) => gameWinPanel.SetActive(isBool);
+    public void SetActiveGameLosePanel(bool isBool) => gameLosePanel.SetActive(isBool);
 
     void ClickReStartGame() => UIFadeManager.Instance.FadeIn();
-    public void SetTextResultEndGame(string text) => resultEndGameText.text = $"{text}";
+    //public void SetTextResultEndGame(string text) => resultEndGameText.text = $"{text}";
     #endregion
 
     #region GAME PLAY

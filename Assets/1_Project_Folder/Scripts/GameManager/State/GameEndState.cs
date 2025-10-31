@@ -15,11 +15,11 @@ public class GameEndState : GameState
 
         if(Context.resultEndGame == ResultEndGame.Winner)
         {
-            UIManager.Instance.SetTextResultEndGame("WINNER");
+            UIManager.Instance.SetActiveGameWinPanel(true);
         }
         else if(Context.resultEndGame == ResultEndGame.Loser)
         {
-            UIManager.Instance.SetTextResultEndGame("LOSER");
+            UIManager.Instance.SetActiveGameLosePanel(true);
         }
     }
 
