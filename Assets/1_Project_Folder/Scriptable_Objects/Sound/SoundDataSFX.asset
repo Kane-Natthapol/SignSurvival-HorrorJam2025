@@ -12,4 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d454029f42ef8044979781780a8578a, type: 3}
   m_Name: SoundDataSFX
   m_EditorClassIdentifier: Assembly-CSharp::SoundData
-  Sounds: []
+  Sounds:
+  - SoundName: amb_Lethal
+    SoundClip: {fileID: 8300000, guid: 5a66b3b3c943aaa489242907b45aed05, type: 3}
+  - SoundName: Finger
+    SoundClip: {fileID: 8300000, guid: bd7352cbd71823a4d9603b2ff264a3ed, type: 3}
+  - SoundName: Game_Over
+    SoundClip: {fileID: 8300000, guid: 8f5019cbabf8f9f4fa5410225813bcdf, type: 3}
+  - SoundName: Nail
+    SoundClip: {fileID: 8300000, guid: 7e201e3aca6202949a7cf33d6f224b3a, type: 3}
+  - SoundName: Page_In
+    SoundClip: {fileID: 8300000, guid: 22bb70dc0e814ea428cdd7cb556d1031, type: 3}
+  - SoundName: Page_Out
+    SoundClip: {fileID: 8300000, guid: 43738c674a1d0a344b46c131bbf9a09d, type: 3}
+  - SoundName: Pen
+    SoundClip: {fileID: 8300000, guid: d69c5caffb5fb4640a59c982c773d669, type: 3}
+  - SoundName: Click
+    SoundClip: {fileID: 8300000, guid: 8435518f0360ee542b8ad85a8173c0a6, type: 3}
+  - SoundName: Start
+    SoundClip: {fileID: 8300000, guid: f338db2f1b215e14687d197e86b50f2c, type: 3}
+  - SoundName: Yeah
+    SoundClip: {fileID: 8300000, guid: 59fef1e2016d6f84ba256b993ed0e809, type: 3}

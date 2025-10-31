@@ -7,24 +7,15 @@ public class SoundManager : Singleton<SoundManager>
 {
     [SerializeField] private SoundData _data;
     [SerializeField] private SoundData _dataBGM;
-    [SerializeField] private AudioSource _sourceBGMMain;
-    [SerializeField] private AudioSource _sourceBGMHand;
+    [SerializeField] private AudioSource _sourceBGMMainmenu;
+    [SerializeField] private AudioSource _sourceBGMCountdown;
+    [SerializeField] private AudioSource _sourceBGMCutOff;
     [SerializeField] private AudioSource _sourceSFX;
     [SerializeField] private AudioMixer _audioMixer;
     float currentFinalBGMVolume;
 
-    [Header("Reverse Input")]
-    [SerializeField] private AudioSource _sourceReverseInput;
-    Coroutine _reverseInputCoroutine;
 
     Coroutine _coroutine;
-    public bool IsEmpty { get { return _data == null || _sourceBGMMain == null || _sourceSFX == null; } }
-    public bool CanPlayCharacterSound { get; private set; }
-    int _isDrawingInt;
-    private void Start()
-    {
-        DontDestroyOnLoad(this);
-    }
     public async void PlayOneShot(string soundName)
     {
         AudioClip clip = await GetSoundClipAsync(soundName, _data);
@@ -38,7 +29,42 @@ public class SoundManager : Singleton<SoundManager>
         }
     }
 
-    public async void PlayBGM(string soundName, bool isFade, float fadeInDuration = 1f, float fadeOutDuration = 1f)
+    public void SetPlayBGMmainMenu(bool isPlay)
+    {
+        if (isPlay) _sourceBGMMainmenu.Play();
+        else _sourceBGMMainmenu.Stop();
+    }
+
+    public void SetPlayBGMCountdown(bool isPlay)
+    {
+        if(isPlay)
+        {
+            if (!_sourceBGMCountdown.isPlaying) _sourceBGMCountdown.Play();
+        }
+        else _sourceBGMCountdown.Pause();
+    }
+
+    public void SetPlayBGMCurOff(bool isPlay)
+    {
+        if (isPlay) _sourceBGMCutOff.Play();
+        else _sourceBGMCutOff.Stop();
+    }
+
+    private async Task<AudioClip> GetSoundClipAsync(string soundName, SoundData data)
+    {
+        // Simulate asynchronous loading
+        //await Task.Delay(10); // Simulated delay for async loading
+        foreach (var sound in data.Sounds)
+        {
+            if (sound.SoundName == soundName)
+            {
+                return sound.SoundClip;
+            }
+        }
+        return null;  // Return null if no sound matches the soundName.
+    }
+
+    /*public async void PlayBGMMain(string soundName, bool isFade, float fadeInDuration = 1f, float fadeOutDuration = 1f)
     {
         AudioClip clip = await GetSoundClipAsync(soundName, _dataBGM);
 
@@ -50,7 +76,6 @@ public class SoundManager : Singleton<SoundManager>
             {
                 if (_coroutine != null)
                 {
-                    Debug.Log("WETHHH");
                     StopCoroutine(_coroutine);
                     _coroutine = null;
                 }
@@ -68,16 +93,20 @@ public class SoundManager : Singleton<SoundManager>
         }
     }
 
-    public void PauseBGM()
+    public void PauseBGMMAin()
     {
         _sourceBGMMain.Stop();
+    }
+
+    public void ContinueBGMMain()
+    {
+        _sourceBGMMain.Play();
     }
 
     public void FadeOutBGM()
     {
         if (_coroutine != null)
         {
-            Debug.Log("WETHHH");
             StopCoroutine(_coroutine);
             _coroutine = null;
         }
@@ -148,6 +177,35 @@ public class SoundManager : Singleton<SoundManager>
         SetVolume("Music_Sound", currentFinalBGMVolume);
     }
 
+    public async void PlayBGMHand(string soundName, bool isFade, float fadeInDuration = 1f, float fadeOutDuration = 1f)
+    {
+        AudioClip clip = await GetSoundClipAsync(soundName, _dataBGM);
+
+        if (clip != null)
+        {
+            if (_sourceBGMHand.clip == clip) return;
+
+            if (isFade)
+            {
+                if (_coroutine != null)
+                {
+                    StopCoroutine(_coroutine);
+                    _coroutine = null;
+                }
+                _coroutine = StartCoroutine(FadeChangeBGM(clip, fadeInDuration, fadeOutDuration));
+            }
+            else
+            {
+                _sourceBGMHand.clip = clip;
+                _sourceBGMHand.Play();
+            }
+        }
+        else
+        {
+            Debug.LogError($"Audio clip not found for sound name: {soundName}");
+        }
+    }
+
     public void MasterVolume(float volume)
     {
         SetVolume("Master_Sound", volume);
@@ -176,42 +234,5 @@ public class SoundManager : Singleton<SoundManager>
         {
             _audioMixer.SetFloat(parameterName, Mathf.Log10(volume) * 20);
         }
-    }
-    public void SetCharacterSound(bool canPlay)
-    {
-        CanPlayCharacterSound = canPlay;
-    }
-    public void PlaySoundReverseInput(bool isPlay)
-    {
-        if (_reverseInputCoroutine != null) StopCoroutine(_reverseInputCoroutine);
-        _reverseInputCoroutine = StartCoroutine(ReverseInputCoroutine(isPlay));
-    }
-    IEnumerator ReverseInputCoroutine(bool isPlay)
-    {
-        float startVolume = _sourceReverseInput.volume;
-        float targetVolume = isPlay ? 1f : 0f;
-
-        if (isPlay && _sourceReverseInput.isPlaying) yield break; // If already playing, do nothing
-        if (!isPlay && !_sourceReverseInput.isPlaying) yield break; // If already stopped, do nothing
-        float duration = 0.5f;
-        float elapsed = 0f;
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            _sourceReverseInput.volume = Mathf.Lerp(startVolume, targetVolume, elapsed / duration);
-            yield return null;
-        }
-        _sourceReverseInput.volume = targetVolume;
-
-        if (isPlay)
-        {
-            _sourceReverseInput.Play();
-        }
-        else
-        {
-            _sourceReverseInput.Stop();
-        }
-        _reverseInputCoroutine = null;
-    }
+    }*/
 }

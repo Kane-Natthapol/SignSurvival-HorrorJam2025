@@ -30,6 +30,7 @@ public class SignatureDrawer : Singleton<SignatureDrawer>
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (drawArea != null && drawArea.IsInside(mousePos))
             {
+                SoundManager.Instance.PlayOneShot(GlobalConstraints.STRING_SOUND_SFX_PEN);
                 StartDrawing(mousePos);
             }
         }

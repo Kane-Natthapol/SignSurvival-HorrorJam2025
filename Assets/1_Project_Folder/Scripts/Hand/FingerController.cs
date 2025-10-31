@@ -1,6 +1,5 @@
 using CustomInspector;
 using UnityEngine;
-using UnityEngine.WSA;
 
 public class FingerController : MonoBehaviour
 {

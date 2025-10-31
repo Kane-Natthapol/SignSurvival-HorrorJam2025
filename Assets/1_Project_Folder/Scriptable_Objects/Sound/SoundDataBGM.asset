@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d454029f42ef8044979781780a8578a, type: 3}
   m_Name: SoundDataBGM
   m_EditorClassIdentifier: Assembly-CSharp::SoundData
-  Sounds: []
+  Sounds:
+  - SoundName: BGM_InGame
+    SoundClip: {fileID: 8300000, guid: 8a15be255d91b7c4cbf000413ca0853c, type: 3}
+  - SoundName: BGM_Main_Menu
+    SoundClip: {fileID: 8300000, guid: 9c4ff36aee2743749b14743d5a317ffa, type: 3}

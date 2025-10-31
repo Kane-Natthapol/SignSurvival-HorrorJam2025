@@ -11,6 +11,9 @@ public class GameShowResultState : GameState
     {
         if(Context.resultEndGame == ResultEndGame.Loser)
         {
+            SoundManager.Instance.SetPlayBGMCountdown(false);
+            SoundManager.Instance.SetPlayBGMCurOff(true);
+
             LightManager.Instance.SetActiveLight(LightType.Hand, true);
 
             HandManager.Instance.StartHandCutOffAll(GameManager.Instance.CheckHealthPlayer());
@@ -21,6 +24,10 @@ public class GameShowResultState : GameState
         {
             if (!Context.isPass)
             {
+                GameManager.Instance.SetIsRunTime(false);
+                SoundManager.Instance.SetPlayBGMCountdown(false);
+                SoundManager.Instance.SetPlayBGMCurOff(true);
+
                 LightManager.Instance.SetActiveLight(LightType.Hand, true);
 
                 GameManager.Instance.AddHealthPlayer(1);
@@ -43,6 +50,7 @@ public class GameShowResultState : GameState
             {
                 if (GameManager.Instance.CheckPaper())
                 {
+                    GameManager.Instance.SetIsRunTime(false);
                     Context.resultEndGame = ResultEndGame.Winner;
                     //Context.isStartEndGame = true;
                     Context.waitNextState = WaitNextState.NextStartEndGame;
@@ -53,6 +61,7 @@ public class GameShowResultState : GameState
                     Context.waitNextState = WaitNextState.NextStartSetup;
                 }
 
+                SoundManager.Instance.PlayOneShot(GlobalConstraints.STRING_SOUND_SFX_PAGE_OUT);
                 PaperManager.Instance.PaperOut();
             }
         }

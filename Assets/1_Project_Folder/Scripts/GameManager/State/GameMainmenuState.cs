@@ -9,6 +9,7 @@ public class GameMainmenuState : GameState
 
     public override void EnterState()
     {
+        SoundManager.Instance.SetPlayBGMmainMenu(true);
         CameraManager.Instance.CameraMainmenu();
         UIManager.Instance.SetActiveMainMenuPanel(true);
     }

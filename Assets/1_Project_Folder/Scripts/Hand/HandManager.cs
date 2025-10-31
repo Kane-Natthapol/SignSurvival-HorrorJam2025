@@ -89,6 +89,7 @@ public class HandManager : Singleton<HandManager>
     {
         plierControllers[index].OnCutoff += ()=>plierControllers[index].ApplyNail(fingerControllers[index].GetNail());
         plierControllers[index].StartCutOff();
+        SoundManager.Instance.PlayOneShot(GlobalConstraints.STRING_SOUND_SFX_NAIL);
         Scare();
     }
 
@@ -99,6 +100,7 @@ public class HandManager : Singleton<HandManager>
         knifeControllers[index].OnCutoff += GameManager.Instance.SetActivateTableBlood;
         knifeControllers[index].OnCutoff += ()=> bloodFingerManagers[index].PlayBloodForDuration(GlobalConstraints.FLOAT_BLOOD_FINGER_DURATION);
         knifeControllers[index].StartCutOff();
+        SoundManager.Instance.PlayOneShot(GlobalConstraints.STRING_SOUND_SFX_FINGER);
         Scare();
     }
 
@@ -128,6 +130,7 @@ public class HandManager : Singleton<HandManager>
         knifeControllers[4].OnCutoff += CameraManager.Instance.CameraShake;
         knifeControllers[4].OnCutoff += GameManager.Instance.SetActivateTableBlood;
         knifeControllers[4].StartCutOff();
+        SoundManager.Instance.PlayOneShot(GlobalConstraints.STRING_SOUND_SFX_GAME_OVER);
         Scare();
     }
 

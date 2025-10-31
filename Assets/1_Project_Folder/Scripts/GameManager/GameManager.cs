@@ -43,7 +43,7 @@ public class GameManager : Singleton<GameManager>
     {
         if(isRunTime && maxTime > 0)
         {
-            if(currentTime >= 1)
+            if(currentTime >= 0)
             {
                 currentTime -= Time.deltaTime;
             }
@@ -67,13 +67,13 @@ public class GameManager : Singleton<GameManager>
         SignatureEvaluator.Instance.SetUpEvaluator(evaluatorThreshold);
         UIManager.Instance.SetTextTimeCoolDown(currentTime.ToString("f0"));
         UIManager.Instance.SetTextHealth(currentHealth.ToString("f0"));
-        UIManager.Instance.SetTextPageCount(currentPaper.ToString("f0"), maxPaper.ToString("f0"));
+        UIManager.Instance.SetTextPageCount(((maxPaper - currentPaper) + 1).ToString("f0"));
     }
 
     public void AddHealthPlayer(int num)
     {
         currentHealth -= num;
-        UIManager.Instance.SetTextHealth(currentHealth.ToString("f0"));
+        UIManager.Instance.SetTextHealth(currentHealth.ToString("f1"));
     }
     public int CheckHealthPlayer()=> currentHealth;
 
@@ -81,14 +81,14 @@ public class GameManager : Singleton<GameManager>
     public float CheckTime()=> currentTime;
     public void AddGameTime()
     {
-        UIManager.Instance.SetTextTimeCoolDown(currentTime.ToString("f0"));
+        UIManager.Instance.SetTextTimeCoolDown(currentTime.ToString("f1"));
     }
 
     public bool CheckPaper()=> currentPaper == maxPaper;
     public void AddPaper(int num)
     {
         currentPaper += num;
-        UIManager.Instance.SetTextPageCount(currentPaper.ToString("f0"), maxPaper.ToString("f0"));
+        UIManager.Instance.SetTextPageCount(((maxPaper - currentPaper) + 1).ToString("f0"));
     }
 
     public void SetRandomBlood()

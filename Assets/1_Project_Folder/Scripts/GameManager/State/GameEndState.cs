@@ -13,8 +13,12 @@ public class GameEndState : GameState
         Time.timeScale = 0;
         UIManager.Instance.SetActiveGameEndPanel(true);
 
-        if(Context.resultEndGame == ResultEndGame.Winner)
+        SoundManager.Instance.SetPlayBGMCountdown(false);
+        SoundManager.Instance.SetPlayBGMCurOff(false);
+
+        if (Context.resultEndGame == ResultEndGame.Winner)
         {
+            SoundManager.Instance.PlayOneShot(GlobalConstraints.STRING_SOUND_SFX_YEAH);
             UIManager.Instance.SetActiveGameWinPanel(true);
         }
         else if(Context.resultEndGame == ResultEndGame.Loser)

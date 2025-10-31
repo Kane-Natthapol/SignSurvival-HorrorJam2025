@@ -9,6 +9,9 @@ public class GameDrawTimeState : GameState
 
     public override void EnterState()
     {
+        SoundManager.Instance.SetPlayBGMCountdown(true);
+        SoundManager.Instance.SetPlayBGMCurOff(false);
+
         GameManager.Instance.SetIsRunTime(true);
         SignatureDrawer.Instance.CanDraw(true);
 
@@ -35,7 +38,6 @@ public class GameDrawTimeState : GameState
     public override void ExitState()
     {
         SignatureDrawer.Instance.CanDraw(false);
-        GameManager.Instance.SetIsRunTime(false);
         Context.isStartResult = false;
         Context.isStartEndGame = false;
     }

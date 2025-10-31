@@ -52,11 +52,19 @@ public class UIManager : Singleton<UIManager>
 
     void ClickStartGame()
     {
+        SoundManager.Instance.PlayOneShot(GlobalConstraints.STRING_SOUND_SFX_CLICK);
+        SoundManager.Instance.PlayOneShot(GlobalConstraints.STRING_SOUND_SFX_START);
+        SoundManager.Instance.SetPlayBGMmainMenu(false);
+
         SetActiveMainMenuPanel(false);
         CameraManager.Instance.CameraSetUp();
     }
 
-    void ClickQuitGame() => Application.Quit();
+    void ClickQuitGame()
+    {
+        SoundManager.Instance.PlayOneShot(GlobalConstraints.STRING_SOUND_SFX_CLICK);
+        Application.Quit();
+    }
     #endregion
 
     #region GAME END PANEL
@@ -64,16 +72,20 @@ public class UIManager : Singleton<UIManager>
     public void SetActiveGameWinPanel(bool isBool) => gameWinPanel.SetActive(isBool);
     public void SetActiveGameLosePanel(bool isBool) => gameLosePanel.SetActive(isBool);
 
-    void ClickReStartGame() => UIFadeManager.Instance.FadeIn();
+    void ClickReStartGame()
+    {
+        SoundManager.Instance.PlayOneShot(GlobalConstraints.STRING_SOUND_SFX_CLICK);
+        UIFadeManager.Instance.FadeIn();
+    }
     //public void SetTextResultEndGame(string text) => resultEndGameText.text = $"{text}";
     #endregion
 
     #region GAME PLAY
     public void SetActiveGamePlayPanel(bool isBool) => gamePlayPanel.SetActive(isBool);
 
-    public void SetTextTimeCoolDown(string time) => timeCoolDownText.text = $"{time}";
+    public void SetTextTimeCoolDown(string time) => timeCoolDownText.text = $"{time.ToString()}";
     public void SetTextHealth(string hp) => healthText.text = $"HP : {hp}";
-    public void SetTextPageCount(string currentPage,string allPage) => pageCountText.text = $"{currentPage}/{allPage}";
+    public void SetTextPageCount(string currentPage) => pageCountText.text = $"{currentPage}";
     public void SetTextResult(string text) => resultText.text = $"{text}";
     #endregion
 

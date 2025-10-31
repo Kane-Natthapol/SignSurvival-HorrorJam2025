@@ -18,6 +18,7 @@ public class GameSetupState : GameState
         if (Context.isPass)
         {
             GameManager.Instance.AddPaper(1);
+            SoundManager.Instance.PlayOneShot(GlobalConstraints.STRING_SOUND_SFX_PAGE_IN);
             PaperManager.Instance.PaperIn();
         }
         else
