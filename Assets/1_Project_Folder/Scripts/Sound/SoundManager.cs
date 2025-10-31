@@ -7,7 +7,8 @@ public class SoundManager : Singleton<SoundManager>
 {
     [SerializeField] private SoundData _data;
     [SerializeField] private SoundData _dataBGM;
-    [SerializeField] private AudioSource _sourceBGM;
+    [SerializeField] private AudioSource _sourceBGMMain;
+    [SerializeField] private AudioSource _sourceBGMHand;
     [SerializeField] private AudioSource _sourceSFX;
     [SerializeField] private AudioMixer _audioMixer;
     float currentFinalBGMVolume;
@@ -17,7 +18,7 @@ public class SoundManager : Singleton<SoundManager>
     Coroutine _reverseInputCoroutine;
 
     Coroutine _coroutine;
-    public bool IsEmpty { get { return _data == null || _sourceBGM == null || _sourceSFX == null; } }
+    public bool IsEmpty { get { return _data == null || _sourceBGMMain == null || _sourceSFX == null; } }
     public bool CanPlayCharacterSound { get; private set; }
     int _isDrawingInt;
     private void Start()
@@ -43,7 +44,7 @@ public class SoundManager : Singleton<SoundManager>
 
         if (clip != null)
         {
-            if (_sourceBGM.clip == clip) return;
+            if (_sourceBGMMain.clip == clip) return;
 
             if (isFade)
             {
@@ -57,8 +58,8 @@ public class SoundManager : Singleton<SoundManager>
             }
             else
             {
-                _sourceBGM.clip = clip;
-                _sourceBGM.Play();
+                _sourceBGMMain.clip = clip;
+                _sourceBGMMain.Play();
             }
         }
         else
@@ -69,7 +70,7 @@ public class SoundManager : Singleton<SoundManager>
 
     public void PauseBGM()
     {
-        _sourceBGM.Stop();
+        _sourceBGMMain.Stop();
     }
 
     public void FadeOutBGM()
@@ -98,7 +99,7 @@ public class SoundManager : Singleton<SoundManager>
             yield return null;
         }
 
-        _sourceBGM.Stop();
+        _sourceBGMMain.Stop();
     }
     private async Task<AudioClip> GetSoundClipAsync(string soundName, SoundData data)
     {
@@ -131,9 +132,9 @@ public class SoundManager : Singleton<SoundManager>
             yield return null;
         }
 
-        _sourceBGM.Stop();
-        _sourceBGM.clip = newClip;
-        _sourceBGM.Play();
+        _sourceBGMMain.Stop();
+        _sourceBGMMain.clip = newClip;
+        _sourceBGMMain.Play();
 
         currentTime = 0f;
         while (currentTime < fadeOutDuration)
