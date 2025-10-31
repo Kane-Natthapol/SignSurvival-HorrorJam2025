@@ -5180,11 +5180,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 9063688613822207062, guid: 7ce927a25270e2141a40d25a177e7d14, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 8a15be255d91b7c4cbf000413ca0853c, type: 3}
+  m_Resource: {fileID: 8300000, guid: 9c4ff36aee2743749b14743d5a317ffa, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -29572,6 +29572,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: aca27d52bf1ddfd42bfe157b2300c5bb, type: 2}
   - {fileID: 11400000, guid: 5d21595b3c64130439053ae4523628a2, type: 2}
   - {fileID: 11400000, guid: 75296954ef86a154cb836dce692d22bd, type: 2}
+  - {fileID: 11400000, guid: 466e9aa4cf054934585a0cb93ec1a0b0, type: 2}
+  - {fileID: 11400000, guid: 1aeacb638a8fedb458b529003de244bb, type: 2}
+  - {fileID: 11400000, guid: fcaadd9b98b4dbe498fd7aad51a68ac5, type: 2}
+  - {fileID: 11400000, guid: 739237421c04e614a9c28a97b0683d9c, type: 2}
+  - {fileID: 11400000, guid: 3302704ce707b364e82c3f9304856fbf, type: 2}
+  - {fileID: 11400000, guid: 84d067f03ce8da44183520067c45bf5f, type: 2}
+  - {fileID: 11400000, guid: c1832fda6d300a34f86bb62781f16abf, type: 2}
+  - {fileID: 11400000, guid: fd091c257f43dad48b69d87ccac6e70e, type: 2}
   hardSignatures:
   - {fileID: 11400000, guid: 7138c70ce1ffdc54db50dd7b9850e8ef, type: 2}
   - {fileID: 11400000, guid: d321daa91d89fc24b95408ca6c6c0a38, type: 2}
